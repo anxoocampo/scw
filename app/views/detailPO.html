@@ -1,0 +1,22 @@
+<h3>INBOUND DELIVERY</h3>
+<button class="btn btn-standard btn-sm" ui-sref="createinbound">CREATE A NEW INBOUND DELIVERY</button>
+
+<h3>EXISTING PACKING LISTS</h3>
+<table class="table">
+    <tr>
+        <th>PL Number</th>
+        <th>MOT</th>
+        <th>Date Submitted</th>
+        <th>Failed</th>
+        <th>Veli Label</th>
+        <th>Inbound Doc</th>
+    </tr>
+    <tr ng-repeat="pl in pls">
+        <td>{{pl.number}}</td>
+        <td>{{pl.mot}}</td>
+        <td>{{pl.dateSubmitted}}</td>
+        <td>{{pl.failed}}</td>
+        <td>{{pl.veliLabel}}</td>
+        <td>{{pl.inboundDoc}}</td>
+    </tr>
+</table>

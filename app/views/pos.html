@@ -1,0 +1,50 @@
+<h3>PURCHASE ORDERS</h3>
+<button class="btn btn-standard btn-sm">PRINT</button>
+<button class="btn btn-standard btn-sm">REFRESH PO LIST</button>
+<h3>FILTER</h3>
+<form name="filterform" novalidate>
+    <div class="form-group" show-errors>
+
+        <label class="control-label">Search PO</label>
+        <input type="text" class="form-control" name="filterpo" placeholder="PO Number" />
+
+        <div class="form-group">
+            <label class="control-label">Filter By Destination</label>
+            <select class="form-control" id="sel1">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+            </select>
+        </div>
+
+        <label class="control-label">Create Inbound</label>
+        <input type="checkbox" />
+
+        <label class="control-label">Documents Available</label>
+        <input type="checkbox" />
+
+        <label class="control-label">Failed ! Contact Sourcing</label>
+        <input type="checkbox" />
+
+    </div>
+    <table class="table">
+        <tr>
+            <th>PO Number</th>
+            <th>Destination</th>
+            <th>Create Inbound</th>
+            <th>Available Doc's</th>
+            <th>Failed PO's</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="po in pos">
+            <td>{{po.number}}</td>
+            <td>{{po.destination}}</td>
+            <td>{{po.inboundCreated}}</td>
+            <td>{{po.docsAvailable}}</td>
+            <td>{{po.failedPO}}</td>
+            <td><button class="btn btn-standard btn-sm" ui-sref="podetail">OPEN PO</button></td>
+        </tr>
+    </table>
+</form>
+
